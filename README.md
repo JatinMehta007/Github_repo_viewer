@@ -13,7 +13,7 @@ A React + TypeScript application that takes a GitHub username and shows:
 
 ![Screenshot](./public/Screenshot.png)  
 (Live demo link can go here if deployed)
-
+[Live Demo](https://repo-jatin.vercel.app/)
 ---
 
 ## 📦 Tech Stack
