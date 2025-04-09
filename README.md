@@ -12,8 +12,8 @@ A React + TypeScript application that takes a GitHub username and shows:
 ## 🚀 Demo
 
 ![Screenshot](./public/Screenshot.png)  
-(Live demo link can go here if deployed)
 [Live Demo](https://repo-jatin.vercel.app/)
+
 ---
 
 ## 📦 Tech Stack
@@ -27,12 +27,12 @@ A React + TypeScript application that takes a GitHub username and shows:
 
 ---
 
-## 📥 Getting Started
+## 📥 Getting Started (Run Locally)
 
 Clone the repo and install dependencies:
 
 ```bash
-git clone https://github.com/yourusername/github-analyzer
-cd github-analyzer
+git clone https://github.com/JatinMehta007/Github_repo_viewer.git
+cd Github_repo_viewer
 npm install
 npm run dev
