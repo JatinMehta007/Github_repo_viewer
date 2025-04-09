@@ -11,7 +11,7 @@ A React + TypeScript application that takes a GitHub username and shows:
 
 ## 🚀 Demo
 
-![screenshot](./public/screenshot.png)  
+![Screenshot](./public/Screenshot.png)  
 (Live demo link can go here if deployed)
 
 ---
