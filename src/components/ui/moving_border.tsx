@@ -1,13 +1,11 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import {
   motion,
   useAnimationFrame,
   useMotionTemplate,
   useMotionValue,
-  useTransform,
 } from "motion/react";
-import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
 export function MovingButton({
@@ -56,7 +54,7 @@ export function MovingButton({
 
       <div
         className={cn(
-          "relative   antialiased backdrop-blur-xl",
+          "relative antialiased backdrop-blur-xl",
           className,
         )}
         style={{
@@ -82,25 +80,25 @@ export const MovingBorder = ({
   ry?: string;
   [key: string]: any;
 }) => {
-  const pathRef = useRef<any>();
-  const progress = useMotionValue<number>(0);
+  const pathRef = useRef<SVGRectElement | null>(null);
+  const progress = useMotionValue(0);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
 
   useAnimationFrame((time) => {
     const length = pathRef.current?.getTotalLength();
     if (length) {
       const pxPerMillisecond = length / duration;
-      progress.set((time * pxPerMillisecond) % length);
+      const val = (time * pxPerMillisecond) % length;
+      progress.set(val);
+
+      const point = pathRef.current?.getPointAtLength(val);
+      if (point) {
+        x.set(point.x);
+        y.set(point.y);
+      }
     }
   });
-
-  const x = useTransform(
-    progress,
-    (val) => pathRef.current?.getPointAtLength(val).x,
-  );
-  const y = useTransform(
-    progress,
-    (val) => pathRef.current?.getPointAtLength(val).y,
-  );
 
   const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;
 
