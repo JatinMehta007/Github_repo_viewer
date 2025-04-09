@@ -5,7 +5,7 @@ A React + TypeScript application that takes a GitHub username and shows:
 - 🔍 A list of their public repositories
 - 📈 An advanced daily commit chart (per day for the past week)
 
-> Built using **Vite**, **Tailwind CSS**, **ShadCN**, and **Accertinity**
+> Built using **Vite**, **Tailwind CSS**, **ShadCN**, and **Accertainity**
 
 ---
 
