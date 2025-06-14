@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { Input } from "./components/ui/input";
 import { Button } from "./components/ui/button";
 import { Card } from "./components/ui/card"; 
 import { cn } from "./lib/utils";
+import ReactGA from "react-ga";
+const TRACKING_ID = "G-BFB8G99L9Z";
+ReactGA.initialize(TRACKING_ID);
 
 type Repo = {
   id: number;
@@ -13,6 +16,9 @@ type Repo = {
 };
 
 function App() {
+   useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
   const [username, setUsername] = useState("");
   const [repos, setRepos] = useState<Repo[]>([]);
 
